@@ -1,7 +1,7 @@
 ### SQL Notes
 This is my personal notes to better understand and learn sql
 
-- RDBMS is a relational database management system.
+- RDBMS is a relational database management system. For example(MySQL, PostgreSQL)
 - On PostgreSQL command line client(psql) you can run meta command using the `\command` format
     for example `\q` quits the interactive shell;
 - SQL statements must end with a semi colon;
@@ -9,11 +9,15 @@ This is my personal notes to better understand and learn sql
 - CREATE DATABASE DBNAME (To create database)
 - DROP DATABASE DBNAME (To drop database)
 - SQL commands are mainly categorized into four categories as:
-
+    
     DDL – Data Definition Language
+    
     DQl – Data Query Language
+    
     DML – Data Manipulation Language
+    
     DCL – Data Control Language
+
 - On PostgreSQL for setting decimal limit we have to use `order_total decimal(4,2)` this sets the maximum value for order_total to 99.99.
 
 - ALTER table_name ALTER column_name (ACTION)[TYPE varchar(50)]
@@ -136,3 +140,97 @@ This is my personal notes to better understand and learn sql
 </tbody>
 
 </table>
+
+- <> is an alternative form of != on SQL
+- Various types of constraint we can use to control what data is added:
+    DEFAULT values
+    
+    NOT NULL constraints
+    
+    UNIQUE constraints
+    
+    CHECK constraints
+
+
+#### INSERT Cheatsheet
+<table>
+  <tbody><tr>
+    <th>Command</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td>INSERT INTO table_name (column1_name, column2_name, ...) VALUES (data_for_column1, data_for_column2, ...);</td>
+    <td>creates a new record in <em>table_name</em> with the specified columns and their associated values.</td>
+  </tr>
+  <tr>
+    <td>ALTER TABLE table_name ADD UNIQUE (column_name);</td>
+    <td>Adds a constraint to <code>table_name</code> that prevent non-unique values from being added to the table for <code>column_name</code>
+</td>
+  </tr>
+  <tr>
+    <td>ALTER TABLE table_name ADD CHECK (expression);</td>
+    <td>Adds a constraint to <code>table_name</code> that prevents new rows from being added if they don't pass a *check* based on a specified expression.</td>
+  </tr>
+</tbody></table>
+
+#### SELECT statement
+
+```
+SELECT [*, (column_name1, column_name2, ...)]
+FROM table_name WHERE (condition);
+```
+
+`Order By`
+
+```
+SELECT [*, (column_name1, column_name2, ...)]
+FROM table_name WHERE (condition)
+ORDER BY column_name;
+```
+- When ordering by boolean values, false comes before true in ascending order 
+
+`Operators`
+
+- Three types of operators are available
+    
+    1. Comparison
+    
+    2. Logical
+    
+    3. String Matching
+
+- This can not be done `WHERE column_name = NULL`, have to use `IS NULL` `IS NOT NULL` comparioson pradicates
+
+`Logical Operators`
+- There are three logicial operators
+    1. And
+    2. Or
+    3. Not(less used)
+
+`String Matching Operators`
+- LIKE(Formats: `%String, String%, _C, C_`)
+
+#### SELECT Cheatsheet
+<table>
+  <tbody><tr>
+    <th>SELECT Clause</th>
+    <th>Notes</th>
+  </tr>
+  <tr>
+    <td>ORDER BY column_name [ASC, DESC]</td>
+    <td>Orders the data selected by a column name within the associated table. Data can be ordered in descending or ascending order; if neither are specified, the query defaults to ascending order.</td>
+  </tr>
+  <tr>
+    <td>WHERE column_name [&gt;,=, &lt;=, =, &lt;&gt;] value</td>
+    <td>Filters a query result based on some comparison between a column's value and a specified literal value. There are several comparison operators available for use, from "greater than" to "not equal to".</td>
+  </tr>
+  <tr>
+    <td>WHERE expression1 [AND, OR] expression2</td>
+    <td>Filters a query result based whether one expression is true [and,or] another expression is true.
+  </td>
+</tr>
+<tr>
+    <td>WHERE string_column LIKE '%substring'</td>
+    <td>Filters a query result based on whether a substring is contained within string_column's data and has any number of characters before that substring. Those characters are matched using the wildcard <code>%</code>. <code>%</code> doesn't have to come before a substring, you can also put it after one as well, matching the substring first and then any number of characters after that substring.</td>
+  </tr>
+</tbody></table>
