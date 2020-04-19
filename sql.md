@@ -234,3 +234,31 @@ ORDER BY column_name;
     <td>Filters a query result based on whether a substring is contained within string_column's data and has any number of characters before that substring. Those characters are matched using the wildcard <code>%</code>. <code>%</code> doesn't have to come before a substring, you can also put it after one as well, matching the substring first and then any number of characters after that substring.</td>
   </tr>
 </tbody></table>
+
+- The process of splitting up data into multiple tables to remove duplication and improve data integrity is known as normalization.
+
+<table>
+<thead>
+<tr>
+<th>Relationship</th>
+<th style="text-align: center">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>One-to-One</td>
+<td style="text-align: center">
+<strong>A</strong> User has <strong>ONE</strong> address</td>
+</tr>
+<tr>
+<td>One-to-Many</td>
+<td style="text-align: center">
+<strong>A</strong> Book has <strong>MANY</strong> reviews</td>
+</tr>
+<tr>
+<td>Many-to-Many</td>
+<td style="text-align: center">
+<strong>A</strong> user has <strong>MANY</strong> books and a book has <strong>MANY</strong> users</td>
+</tr>
+</tbody>
+</table>
