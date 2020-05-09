@@ -262,3 +262,37 @@ ORDER BY column_name;
 </tr>
 </tbody>
 </table>
+
+-PostgreSQL provides a number of expressions that can be used specifically with sub-queries, such as IN, NOT IN, ANY, SOME, and ALL. These all work slightly differently, but essentially they all compare values to the results of a subquery.
+
+- Types of JOIN
+<table>
+<thead>
+<tr>
+<th>Join Type</th>
+<th style="text-align: center">Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INNER</td>
+<td style="text-align: center">Combines rows from two tables whenever the join condition is met.</td>
+</tr>
+<tr>
+<td>LEFT</td>
+<td style="text-align: center">Same as an inner join, except rows from the first table are added to the join table, regardless of the evaluation of the join condition.</td>
+</tr>
+<tr>
+<td>RIGHT</td>
+<td style="text-align: center">Same as an inner join, except rows from the second table are added to the join table, regardless of the evaluation of the join condition.</td>
+</tr>
+<tr>
+<td>FULL</td>
+<td style="text-align: center">A combination of left join and right join.</td>
+</tr>
+<tr>
+<td>CROSS</td>
+<td style="text-align: center">Doesn't use a join condition. The join table is the result of matching every row from the first table with the second table, the cross product of all rows across both tables.</td>
+</tr>
+</tbody>
+</table>
