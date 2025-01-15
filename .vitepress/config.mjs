@@ -98,11 +98,11 @@ const getMarkdownLinks = async () => {
 // https://vitepress.dev/reference/site-config
 export default defineConfig(async () => {
   const markdownLinks = await getMarkdownLinks();
-
+  const base = process.env.NODE_ENV == "development" ? "/" : "/learning-notes/"
   return {
-    title: "Learning Notes - Md Atiquzzaman Soikat",
+    title: "Learning Notes",
     description: "Learning notes collection by Md Atiquzzaman Soikat",
-    base: '/learning-notes/',
+    base: base,
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       nav: [{ text: "Home", link: "/" }],
