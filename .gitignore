@@ -3,3 +3,4 @@
 .obsidian/plugins
 node_modules
 .vitepress/cache
+.vitepress/dist
