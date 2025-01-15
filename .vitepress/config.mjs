@@ -102,6 +102,7 @@ export default defineConfig(async () => {
   return {
     title: "Learning Notes - Md Atiquzzaman Soikat",
     description: "Learning notes collection by Md Atiquzzaman Soikat",
+    base: '/learning-notes/',
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       nav: [{ text: "Home", link: "/" }],
