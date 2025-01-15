@@ -1,3 +1,5 @@
 .obsidian/appearance.json
 .obsidian/workspace.json
 .obsidian/plugins
+node_modules
+.vitepress/cache

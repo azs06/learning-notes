@@ -1,0 +1,21 @@
+{
+  "name": "learning-notes",
+  "version": "1.0.0",
+  "description": "## A repository containing notes that I have taken during the learning journey for a specifict tools or technology",
+  "main": "build.js",
+  "dependencies": {
+    "vitepress": "^1.5.0"
+  },
+  "devDependencies": {
+    "gray-matter": "^4.0.3"
+  },
+  "scripts": {
+    "build": "node build",
+    "docs:dev": "vitepress dev",
+    "docs:build": "vitepress build",
+    "docs:preview": "vitepress preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
