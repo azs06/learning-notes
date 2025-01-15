@@ -91,7 +91,7 @@ const getMarkdownLinks = async () => {
       link: `${i.path}`,
     };
   }).filter((i) => {
-    return i.text !== "index";
+    return i.text !== "index" && i.text !== "readme";
   })
 };
 
