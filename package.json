@@ -9,6 +9,9 @@
   "devDependencies": {
     "gray-matter": "^4.0.3"
   },
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "4.9.5"
+  },
   "scripts": {
     "build": "node build",
     "docs:dev": "vitepress dev",
