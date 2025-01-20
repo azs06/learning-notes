@@ -3,6 +3,7 @@ import { h } from 'vue'
 import DefaultTheme from 'vitepress/theme'
 import './style.css'
 import FileList from './components/FileList.vue'
+import GetQuotes from './components/GetQuotes.vue'
 
 /** @type {import('vitepress').Theme} */
 export default {
@@ -14,5 +15,6 @@ export default {
   },
   enhanceApp({ app, router, siteData }) {
     app.component('FileList', FileList);
+    app.component("GetQuotes", GetQuotes);
   }
 }
